@@ -3,20 +3,24 @@
 	As a user
 	I want to get weather by calling API
 
-@test
-Scenario: Get response successfully
+
+Scenario Outline: Get weather info
 	Given I am connected to OpenWeatherAPI
 	And I created request
-	And I passed Belgrade as city
+	And I passed parameter <ParameterName> and its value <ParameterValue>	
 	And I passed API key	
 	When I send request
-	Then result should be successful response
+	Then result should be response containing weather info
+Examples: 
+	| ParameterName | ParameterValue |
+	| q             | Belgrade       |
+	| id            | 792680         |
+	| zip           | 94040,us       |
 
-@test
-Scenario: Get weather info
+Scenario: Get weather info using city coordinates
 	Given I am connected to OpenWeatherAPI
 	And I created request
-	And I passed Belgrade as city
+	And I passed city coordinates
 	And I passed API key	
 	When I send request
 	Then result should be response containing weather info

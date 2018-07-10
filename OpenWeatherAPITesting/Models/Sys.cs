@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace OpenWeatherAPITesting.Models
 {
+    [JsonObject]
     public class Sys
     {
-        private int type;
+        public int type;
 
-        private int id;
+        public int id;
 
-        private int message;
+        public string message;
 
-        private string country;
+        public string country;
 
-        private int sunrise;
+        public int sunrise;
 
-        private int sunset;
+        public int sunset;
     }
 }

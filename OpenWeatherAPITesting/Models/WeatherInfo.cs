@@ -3,34 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using SimpleJson;
 
 namespace OpenWeatherAPITesting.Models
 {
+    [JsonObject]
     public class WeatherInfo
     {
-        private Coord cord;
+        public Coord coord;
 
-        private Weather weather;
+        public List<Weather> weather;
 
-        private string @base;
+        public string @base;
 
-        private Main main;
+        public Main main;
 
-        private int visibility;
+        public int visibility;
 
-        private Wind wind;
+        public Wind wind;
 
-        private Clouds clouds;
+        public Clouds clouds;
 
-        private int dt;
+        public int dt;
 
-        private Sys sys;
+        public Sys sys;
 
-        private int id;
+        public int id;
 
-        private string name;
+        public string name;
 
-        private int cod;
+        public int cod;
     }
 
 }
